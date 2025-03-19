@@ -20,6 +20,7 @@ class PlantUpdateAPIView(generics.UpdateAPIView):
     serializer_class = PlantSerializer
     lookup_field = 'id'
 
+
 class PlantDeleteAPIView(generics.DestroyAPIView):
     queryset = Plant.objects.all()
     serializer_class = PlantSerializer
