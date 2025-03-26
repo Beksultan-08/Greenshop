@@ -6,7 +6,7 @@ from .models import Post, PostImage
 class PostImageSerializer(serializers.ModelSerializer):
     class Meta:
         model = PostImage
-        fields = ('id', 'image')
+        fields = ('id', 'images')
 
 
 class PostSerializer(serializers.ModelSerializer):
