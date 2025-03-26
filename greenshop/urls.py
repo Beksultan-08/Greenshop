@@ -8,8 +8,6 @@ from rest_framework_simplejwt.views import (
     TokenRefreshView,
 )
 
-
-
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
@@ -17,14 +15,14 @@ urlpatterns = [
 ]
 
 swagger_urlpatterns = [
-
-    path('api/schema/', SpectacularAPIView.as_view(), name='schema'),
-    path('api/schema/swagger/', SpectacularSwaggerView.as_view(url_name='schema'), name='swagger-ui'),
-    path('api/schema/redoc/', SpectacularRedocView.as_view(url_name='schema'), name='redoc'),
+    path('api/v1/', SpectacularAPIView.as_view(), name='schema'),
+    path('api/v1/swagger/', SpectacularSwaggerView.as_view(url_name='schema'), name='swagger-ui'),
+    path('api/v1/redoc/', SpectacularRedocView.as_view(url_name='schema'), name='redoc'),
 ]
 
 apps_urlpatterns = [
-    path('api/v1/plant/', include('product.urls'))
+    path('api/v1/plant/', include('product.urls')),
+    path('api/v1/post/', include('post.urls'))
 ]
 
 urlpatterns += swagger_urlpatterns
